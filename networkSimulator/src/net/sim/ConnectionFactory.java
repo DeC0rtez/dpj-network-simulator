@@ -16,13 +16,13 @@ public class ConnectionFactory {
     public static Connection createConnection(ConnectionType connectionType, int id, Device device1, Device device2) {
         switch (connectionType){
             case ETHERNET:
-                return new EthernetConnection(device1, device2, id);
+                return new EthernetConnection(device1, device2, id, connectionType);
                 break;
             case WIRELESS:
-                return new WirelessConnection(device1, device2, id);
+                return new WirelessConnection(device1, device2, id, connectionType);
                 break;
             default:
-                return new EthernetConnection(device1, device2, id);
+                return new EthernetConnection(device1, device2, id, connectionType);
                 break;
         }
     }

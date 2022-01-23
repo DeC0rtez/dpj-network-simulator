@@ -13,19 +13,19 @@ public class DeviceFactory {
     public Device createDevice(DeviceType deviceType, int newDeviceID){
         switch (deviceType){
             case WIRELESSROUTER:
-                return new WirelessRouter(newDeviceID);
+                return new WirelessRouter(new NetworkLayer(), deviceType, newDeviceID);
                 break;
             case ROUTER:
-                return new Router(newDeviceID);
+                return new Router(new NetworkLayer(), deviceType, newDeviceID);
                 break;
             case SWITCH:
-                return new Switch(newDeviceID);
+                return new Switch(new NetworkLayer(), deviceType, newDeviceID);
                 break;
             case COMPUTER:
-                return new Computer(newDeviceID);
+                return new Computer(new NetworkLayer(), deviceType, newDeviceID);
                 break;
             default:
-                return new Router(newDeviceID);
+                return new Router(new NetworkLayer(), deviceType, newDeviceID);
         }
     }
 
