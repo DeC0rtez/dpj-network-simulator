@@ -17,17 +17,31 @@ public class Simulation {
 
 
     public void addDevice(DeviceType deviceType){
-        Device device = deviceFactory.createDevice(deviceType, getNewDeviceID());
+        int id = getNewDeviceID();
+        Device device = deviceFactory.createDevice(deviceType, id);
+        devices.put(id, device);
     }
     public int getNewDeviceID(){
         return deviceIDIncrement++;
     }
 
     public void addConnection(Device device1, Device device2, ConnectionType connectionType){
-
+        int id = getNewConnectionID();
+        Connection connection = connectionFactory.createConnection(connectionType, id, device1, device2);
+        connections.put(id, connection);
     }
     public int getNewConnectionID(){
         return connectionIDIncrement++;
     }
+
+    public void addFailurePoint(Connection connection, float chance){
+        if(chance <= 1){
+            if (chance >= 0){
+                connection.failureRate = chance;
+            }
+        }
+    }
+
+
 
 }
