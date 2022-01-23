@@ -13,7 +13,7 @@ public class ConnectionFactory {
      * @param device2 reference to a device
      * @return
      */
-    public Connection createConnection(ConnectionType connectionType, int id, Device device1, Device device2) {
+    public static Connection createConnection(ConnectionType connectionType, int id, Device device1, Device device2) {
         switch (connectionType){
             case ETHERNET:
                 return new EthernetConnection(device1, device2, id);
