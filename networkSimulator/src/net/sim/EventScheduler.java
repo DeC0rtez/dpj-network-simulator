@@ -9,7 +9,7 @@ public class EventScheduler {
         eventQueue.add(e);
     }
     public void next(){
-        Event currentEvent = eventQueue.getFirst();
+        Event currentEvent = eventQueue.removeFirst();
         currentEvent.eventHandler.handleEvent(currentEvent);
     }
 }
