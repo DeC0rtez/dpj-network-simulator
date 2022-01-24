@@ -7,6 +7,7 @@ public abstract class Router extends Device{
 
     public String IPAddress;
     public Map<String, String> wiredConnections = new HashMap<>();
+    // public Connection[] wiredConnections; -- list of objects? tbd. with martin
     public Map<String, String> routingTable = new HashMap<>();
 
     public void addRoute(String packetDestination, String nextHop) {
@@ -23,6 +24,14 @@ public abstract class Router extends Device{
 
     public void delConnection(String connectedDeviceID) {
         wiredConnections.remove(connectedDeviceID);
+    }
+
+    public void setIPAddress(String IP) {
+        IPAddress = IP;
+    }
+
+    public void showIP() {
+        System.out.println("Device " + id + " IP is: " + IPAddress);
     }
 
 
