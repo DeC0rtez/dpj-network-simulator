@@ -13,3 +13,4 @@ public class EventScheduler {
         currentEvent.eventHandler.handleEvent(currentEvent);
     }
 }
+//Nikita Druzhkov

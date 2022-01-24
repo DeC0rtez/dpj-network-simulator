@@ -6,3 +6,4 @@ public abstract  class Event {
         eventHandler = _handler;
     }
 }
+//Nikita Druzhkov
