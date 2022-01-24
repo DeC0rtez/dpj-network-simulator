@@ -24,6 +24,7 @@ public class Simulation {
     private ConnectionFactory connectionFactory = new ConnectionFactory();
 
     /**
+     * Add a device to the simulation
      * Creates a Device using DeviceFactory and adds it to Devices
      * @param deviceType Type of device to be created, see DeviceType
      */
@@ -43,6 +44,7 @@ public class Simulation {
     }
 
     /**
+     * Add a connection to the simulation
      * Creates a Connection using ConnectionFactory and adds it to Connections
      * @param device1 Reference to one of the devices being connected
      * @param device2 Reference to the other device being connected
