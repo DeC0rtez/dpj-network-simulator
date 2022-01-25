@@ -16,6 +16,11 @@ public abstract class Connection implements  EventHandler{
         type = _type;
     }
     public void setFailureRate(float failureRate) {
-        this.failureRate = failureRate;
+        if(failureRate > 0 && failureRate < 1){
+            this.failureRate = failureRate;
+        }else {
+            System.out.println("failureRate needs to be (< 0 && > 1)");
+        }
+
     }
 }
