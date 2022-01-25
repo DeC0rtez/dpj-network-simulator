@@ -6,7 +6,6 @@ import java.util.Map;
 public class WirelessRouter extends Device{
 
     // Router information
-    public String IPAddress;
     public Map<String, String> wiredConnections = new HashMap<>();
     public Map<String, String> wirelessConnections = new HashMap<>();
     public Map<String, String> routingTable = new HashMap<>();
@@ -63,16 +62,16 @@ public class WirelessRouter extends Device{
 
     // IP methods
     public void setIPAddress(String IP) {
-        IPAddress = IP;
+        this.ipAddress = new IPAddress(IP);
     }
 
     public void showIP() {
-        System.out.println("Device " + id + " IP is: " + IPAddress);
+        System.out.println("Device " + this.id + " IP is: " + this.ipAddress.ipStr);
     }
 
 
-    public WirelessRouter(NetworkLayer _layer, DeviceType _type, int deviceID) {
-        super(_layer, _type, deviceID);
+    public WirelessRouter(NetworkLayer _layer, DeviceType _type, int _deviceID, IPAddress _ipAddress) {
+        super(_layer, _type, _deviceID, _ipAddress);
     }
 
     @Override
