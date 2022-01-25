@@ -8,9 +8,10 @@ public class EventScheduler {
     public void schedule(Event e){
         eventQueue.add(e);
     }
-    public void next(){
+    public Event next(){
         Event currentEvent = eventQueue.removeFirst();
         currentEvent.eventHandler.handleEvent(currentEvent);
+        return currentEvent;
     }
 }
 //Nikita Druzhkov

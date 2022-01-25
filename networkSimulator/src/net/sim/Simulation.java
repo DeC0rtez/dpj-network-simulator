@@ -29,6 +29,10 @@ public class Simulation {
         connectionFactory = new ConnectionFactory(eventScheduler);
     }
 
+    public void tick(){
+        Event current = eventScheduler.next();
+    }
+
     /**
      * Add a device to the simulation
      * Creates a Device using DeviceFactory and adds it to Devices
