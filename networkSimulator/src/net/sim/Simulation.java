@@ -5,6 +5,7 @@ import java.util.Hashtable;
 
 /**
  * This class is a superstructure for the simulation
+ * It handles requests the user can make in terms of interacting with the simulation/network
  * It contains all the components necessary to represent a network topology
  * It has all methods necessary for creating a topology
  *
