@@ -96,5 +96,13 @@ public class Simulation {
         return connections.get(id);
     }
 
+    /**
+     * Sends a new event to eventScheduler and adds it to the queue
+     * @param event instance of a class that extends Event
+     */
+    public void sheduleEvent(Event event){
+        eventScheduler.schedule(event);
+    }
+
 
 }
