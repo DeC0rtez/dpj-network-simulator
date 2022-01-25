@@ -2,6 +2,7 @@ package net.sim;
 
 import java.util.Dictionary;
 import java.util.Hashtable;
+import java.util.LinkedList;
 
 /**
  * This class is a superstructure for the simulation
@@ -124,6 +125,48 @@ public class Simulation {
      */
     public void scheduleEvent(Event event){
         eventScheduler.schedule(event);
+    }
+
+    /**
+     * Prints the stored topology of the network simulation
+     * @author Martin Janda
+     */
+    public void printTopology(){
+        for(var i =1; i<=deviceIDIncrement; i++)
+        {
+            System.out.println("========================");
+            System.out.println();
+            Device device = getDeviceByID(i);
+            System.out.print("DEVICE ID : ");
+            System.out.print(i);
+            System.out.println();
+            System.out.print("TYPE OF DEVICE: ");
+            System.out.print(device.type);
+            System.out.println();
+            System.out.println("CONNECTIED TO: ");
+            LinkedList<Connection> connections = device.connections;
+            for(var c = 0; c<connections.size(); c++){
+                System.out.println("++++++++");
+                Connection connection = connections.get(c);
+                System.out.print("    CONNECTION ID: ");
+                System.out.println(connection.id);
+                System.out.println();
+                System.out.print("    TYPE OF CONNECTION: ");
+                System.out.print(connection.type);
+                System.out.println();
+                System.out.print("    DEVICE1 ID: ");
+                System.out.print(connection.device1.id);
+                System.out.println();
+                System.out.print("    DEVICE2 ID: ");
+                System.out.print(connection.device2.id);
+                System.out.println();
+                System.out.print("    FAILURE RATE: ");
+                System.out.print(connection.failureRate);
+                System.out.println();
+
+            }
+
+        }
     }
 
 
