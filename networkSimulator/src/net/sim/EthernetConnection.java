@@ -6,8 +6,8 @@ public class EthernetConnection extends Connection{
     public int speed;
 
 
-    public EthernetConnection(Device _device1, Device _device2, int id) {
-        super(_device1, _device2, id, ConnectionType.ETHERNET);
+    public EthernetConnection(Device _device1, Device _device2, int id, EventScheduler eventScheduler, ConnectionFactory _connectionFactory) {
+        super(_device1, _device2, id, ConnectionType.ETHERNET, eventScheduler, _connectionFactory);
     }
 
     public IPAddress getDevice1IP()
@@ -24,9 +24,8 @@ public class EthernetConnection extends Connection{
 
     }
 
-    public void connectDevice(int connectionNumber, Device device){
-        ConnectionFactory.createConnection(ConnectionType.ETHERNET, connectionNumber, this.device1, this.device2);
-    }
+
+
 }
 
 //Vlad

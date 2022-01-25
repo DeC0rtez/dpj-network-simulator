@@ -7,6 +7,17 @@ package net.sim;
  */
 
 public class ConnectionFactory {
+    EventScheduler eventScheduler;
+
+    /**
+     * Constructor gets EventScheduler instance to pass it to connection classes
+     * @param _eventScheduler reference to EventScheduler main instance
+     *
+     * @author Nikita Druzhkov
+     */
+    public ConnectionFactory(EventScheduler _eventScheduler){
+        eventScheduler = _eventScheduler;
+    }
     /**
      * Returns a Connection
      * @param connectionType type of connection, see ConnectionType
@@ -15,17 +26,13 @@ public class ConnectionFactory {
      * @param device2 reference to a device
      * @return
      */
-    public static Connection createConnection(ConnectionType connectionType, int id, Device device1, Device device2) {
+    public  Connection createConnection(ConnectionType connectionType, int id, Device device1, Device device2) {
         switch (connectionType){
-            case ETHERNET:
-                return new EthernetConnection(device1, device2, id, connectionType);
-                break;
+
             case WIRELESS:
-                return new WirelessConnection(device1, device2, id, connectionType);
-                break;
-            default:
-                return new EthernetConnection(device1, device2, id, connectionType);
-                break;
+                return new WirelessConnection(device1, device2, id, eventScheduler, this);
+            default: // ETHERNET is a default connection
+                return new EthernetConnection(device1, device2, id, eventScheduler, this);
         }
     }
     //Martin Janda

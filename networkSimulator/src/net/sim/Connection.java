@@ -8,12 +8,19 @@ public abstract class Connection implements  EventHandler{
     public Device device2;
     public ConnectionType type;
     public float failureRate;
+    public EventScheduler eventScheduler;
+    public ConnectionFactory connectionFactory;
     public int speed;
-    public Connection(Device _device1, Device _device2, int id, ConnectionType _type){
+    public Connection(Device _device1, Device _device2, int _id, ConnectionType _type, EventScheduler _eventScheduler, ConnectionFactory _connectionFactory){
         device1 = _device1;
         device2 = _device2;
-        this.id = id;
+        id = _id;
         type = _type;
+        eventScheduler = _eventScheduler;
+        connectionFactory = _connectionFactory;
+    }
+    public void handleEvent(Event e) {
+        eventScheduler.schedule(e);
     }
     public void setFailureRate(float failureRate) {
         if(failureRate > 0 && failureRate < 1){
@@ -22,5 +29,15 @@ public abstract class Connection implements  EventHandler{
             System.out.println("failureRate needs to be (< 0 && > 1)");
         }
 
+    }
+
+    /**
+     * Connects  device1 to another device that is NOT device2
+     * @param connectionNumber Id of connection
+     * @param device device to which device1 will be connected
+     * @author Nikita Druzhkov
+     */
+    public void connectDevice(int connectionNumber, Device device){
+        connectionFactory.createConnection(ConnectionType.ETHERNET, connectionNumber, this.device1, device);
     }
 }

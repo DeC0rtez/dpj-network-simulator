@@ -6,8 +6,8 @@ public class WirelessConnection extends Connection{
     public int channel;
 
 
-    public WirelessConnection(Device _device1, Device _device2, int id) {
-        super(_device1, _device2, id, ConnectionType.WIRELESS);
+    public WirelessConnection(Device _device1, Device _device2, int id, EventScheduler eventScheduler, ConnectionFactory _connectionFactory) {
+        super(_device1, _device2, id, ConnectionType.WIRELESS, eventScheduler, _connectionFactory);
     }
 
     public IPAddress getDevice1IP()
@@ -24,8 +24,5 @@ public class WirelessConnection extends Connection{
 
     }
 
-    public void connectDevice(int connectionNumber, Device device){
-        ConnectionFactory.createConnection(ConnectionType.WIRELESS, connectionNumber, this.device1, this.device2);
-    }
 
 }

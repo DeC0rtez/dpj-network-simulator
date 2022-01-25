@@ -43,8 +43,8 @@ public class Switch extends Device {
     }
 
     // Constructor
-    public Switch(NetworkLayer _layer, DeviceType _type, int deviceID) {
-        super(_layer, _type, deviceID);
+    public Switch(NetworkLayer _layer, DeviceType _type, int deviceID, IPAddress _ipAddress) {
+        super(_layer, _type, deviceID, _ipAddress);
     }
 
     // handleEvent override

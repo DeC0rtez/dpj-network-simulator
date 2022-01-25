@@ -52,8 +52,8 @@ public class Computer extends Device {
     }
 
     // Constructor
-    public Computer(NetworkLayer _layer, DeviceType _type, int deviceID) {
-        super(_layer, _type, deviceID);
+    public Computer(NetworkLayer _layer, DeviceType _type, int deviceID, IPAddress _ipAddress) {
+        super(_layer, _type, deviceID, _ipAddress);
     }
 
     // handleEvent override

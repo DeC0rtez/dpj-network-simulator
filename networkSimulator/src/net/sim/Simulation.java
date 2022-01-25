@@ -20,17 +20,23 @@ public class Simulation {
     private int connectionIDIncrement = 0; //Keeps track of valid connection ID's
 
     private EventScheduler eventScheduler;
-    private DeviceFactory deviceFactory = new DeviceFactory();
-    private ConnectionFactory connectionFactory = new ConnectionFactory();
+    private DeviceFactory deviceFactory;
+    private ConnectionFactory connectionFactory;
+
+    public void Simulation(){
+        eventScheduler = new EventScheduler();
+        deviceFactory = new DeviceFactory();
+        connectionFactory = new ConnectionFactory(eventScheduler);
+    }
 
     /**
      * Add a device to the simulation
      * Creates a Device using DeviceFactory and adds it to Devices
      * @param deviceType Type of device to be created, see DeviceType
      */
-    public void addDevice(DeviceType deviceType){
+    public void addDevice(DeviceType deviceType, IPAddress ip){
         int id = getNewDeviceID();
-        Device device = deviceFactory.createDevice(deviceType, id);
+        Device device = deviceFactory.createDevice(deviceType, id, ip);
         devices.put(id, device);
     }
 
@@ -94,14 +100,6 @@ public class Simulation {
      */
     public Connection getConnectionByID(int id){
         return connections.get(id);
-    }
-
-    /**
-     * Sends a new event to eventScheduler and adds it to the queue
-     * @param event instance of a class that extends Event
-     */
-    public void sheduleEvent(Event event){
-        eventScheduler.schedule(event);
     }
 
 

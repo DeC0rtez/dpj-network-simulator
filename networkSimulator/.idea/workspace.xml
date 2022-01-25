@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a6c2a50-627a-4997-8ea1-d73d5e61b787" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/sim/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/sim/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/sim/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/sim/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/sim/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/sim/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/sim/DeviceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/sim/DeviceFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/sim/EthernetConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/sim/EthernetConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/sim/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/sim/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/sim/WirelessConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/sim/WirelessConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,5 +124,17 @@
       <updated>1642275859370</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
