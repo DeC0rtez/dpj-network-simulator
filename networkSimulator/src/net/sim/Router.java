@@ -3,13 +3,14 @@ package net.sim;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class Router extends Device{
+public class Router extends Device{
 
+    // Router information
     public String IPAddress;
     public Map<String, String> wiredConnections = new HashMap<>();
-    // public Connection[] wiredConnections; -- list of objects? tbd. with martin
     public Map<String, String> routingTable = new HashMap<>();
 
+    // Routing table methods
     public void addRoute(String packetDestination, String nextHop) {
         routingTable.put(packetDestination, nextHop);
     }
@@ -18,14 +19,25 @@ public abstract class Router extends Device{
         routingTable.remove(packetDestination);
     }
 
+    public void showRoutingTable() {
+        System.out.println(this.id + " Routing table: ");
+        routingTable.forEach((packetDestination,nextHop)-> System.out.println("destination: " + packetDestination + " next hop: " + nextHop));
+    }
+
+    // Wired connection methods
     public void addConnection(String connectedDeviceID, String connectedDeviceIP) {
         wiredConnections.put(connectedDeviceID, connectedDeviceIP);
     }
-
     public void delConnection(String connectedDeviceID) {
         wiredConnections.remove(connectedDeviceID);
     }
 
+    public void showConnections() {
+        System.out.println(this.id + " wired connections: ");
+        wiredConnections.forEach((connectedDeviceID,connectedDeviceIP)-> System.out.println("connected device ID: " + connectedDeviceID + " IP: " + connectedDeviceIP));
+    }
+
+    // IP methods
     public void setIPAddress(String IP) {
         IPAddress = IP;
     }
@@ -37,6 +49,11 @@ public abstract class Router extends Device{
 
     public Router(NetworkLayer _layer, DeviceType _type, int deviceID) {
         super(_layer, _type, deviceID);
+    }
+
+    @Override
+    public void handleEvent(Event e) {
+
     }
 }
 // Daniel De Corte

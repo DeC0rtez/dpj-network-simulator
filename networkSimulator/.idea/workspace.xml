@@ -4,6 +4,7 @@
     <list default="true" id="1a6c2a50-627a-4997-8ea1-d73d5e61b787" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/net/sim/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/sim/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/sim/WirelessRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/sim/WirelessRouter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
