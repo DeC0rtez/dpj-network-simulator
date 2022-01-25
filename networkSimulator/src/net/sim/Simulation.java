@@ -78,6 +78,9 @@ public class Simulation {
         }
     }
 
+    public Device getDeviceByID(int id){
+        return devices.get(id);
+    }
 
 
 }
