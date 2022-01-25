@@ -2,6 +2,8 @@ package net.sim;
 
 /**
  * This class is responsible for creating devices
+ *
+ * @author Martin Janda
  */
 public class DeviceFactory {
     /**

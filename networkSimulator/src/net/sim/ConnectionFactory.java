@@ -2,6 +2,8 @@ package net.sim;
 
 /**
  * This class is responsible for creating connections
+ *
+ * @author Martin Janda
  */
 
 public class ConnectionFactory {

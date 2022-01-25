@@ -78,8 +78,22 @@ public class Simulation {
         }
     }
 
+    /**
+     * Returns a device with a matching ID from devices
+     * @param id ID of the device
+     * @return
+     */
     public Device getDeviceByID(int id){
         return devices.get(id);
+    }
+
+    /**
+     * Returns a device with a matching ID from connections
+     * @param id ID of the connection
+     * @return
+     */
+    public Connection getConnectionByID(int id){
+        return connections.get(id);
     }
 
 
