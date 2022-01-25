@@ -29,8 +29,17 @@ public class Simulation {
         connectionFactory = new ConnectionFactory(eventScheduler);
     }
 
+    /**
+     * Checks next scheduled event,
+     * and performs it if it is defined
+     * 
+     */
     public void tick(){
         Event current = eventScheduler.next();
+        if(current.type == EventType.SIMPLEPING){
+            SimplePingEvent x = (SimplePingEvent) current;
+            getDeviceByID(x.id).handleSimplePing(x);
+        }
     }
 
     /**

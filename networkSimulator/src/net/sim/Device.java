@@ -24,7 +24,7 @@ public abstract class Device implements EventHandler {
      * Method for handling a PingEvent
      * @param event must be a PingEvent
      */
-    public void handleSimplePing(PingEvent event){
+    public void handleSimplePing(SimplePingEvent event){
         Device device1 = connections.getFirst().device1;
         Device device2 = connections.getFirst().device2;
 
