@@ -117,5 +117,13 @@ public class Simulation {
         return connections.get(id);
     }
 
+    /**
+     * Public facing method for scheduling an event to the EventScheduler queue
+     * @param event
+     */
+    public void scheduleEvent(Event event){
+        eventScheduler.schedule(event);
+    }
+
 
 }
