@@ -12,22 +12,22 @@ public class DeviceFactory {
      * @param newDeviceID ID of the device
      * @return
      */
-    public Device createDevice(DeviceType deviceType, int newDeviceID){
+    public Device createDevice(DeviceType deviceType, int newDeviceID, IPAddress ip){
         switch (deviceType){
             case WIRELESSROUTER:
-                return new WirelessRouter(new NetworkLayer(), deviceType, newDeviceID);
+                return new WirelessRouter(new NetworkLayer(), deviceType, newDeviceID, ip);
                 break;
             case ROUTER:
-                return new Router(new NetworkLayer(), deviceType, newDeviceID);
+                return new Router(new NetworkLayer(), deviceType, newDeviceID, ip);
                 break;
             case SWITCH:
-                return new Switch(new NetworkLayer(), deviceType, newDeviceID);
+                return new Switch(new NetworkLayer(), deviceType, newDeviceID, ip);
                 break;
             case COMPUTER:
-                return new Computer(new NetworkLayer(), deviceType, newDeviceID);
+                return new Computer(new NetworkLayer(), deviceType, newDeviceID, ip);
                 break;
             default:
-                return new Router(new NetworkLayer(), deviceType, newDeviceID);
+                return new Router(new NetworkLayer(), deviceType, newDeviceID, ip);
         }
     }
 
