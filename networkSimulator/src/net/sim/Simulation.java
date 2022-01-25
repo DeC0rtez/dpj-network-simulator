@@ -32,7 +32,7 @@ public class Simulation {
     /**
      * Checks next scheduled event,
      * and performs it if it is defined
-     * 
+     * Curently all that can be simulation is a SimplePingEvent
      */
     public void tick(){
         Event current = eventScheduler.next();
