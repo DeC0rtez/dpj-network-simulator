@@ -60,6 +60,8 @@ public class Simulation {
         int id = getNewConnectionID();
         Connection connection = connectionFactory.createConnection(connectionType, id, device1, device2);
         connections.put(id, connection);
+        device1.addConnection(connection);
+        device2.addConnection(connection);
     }
 
     /**
