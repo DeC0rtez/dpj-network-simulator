@@ -34,11 +34,12 @@ public class Simulation {
     /**
      * Checks next scheduled event,
      * and performs it if it is defined
-     * Curently all that can be simulation is a SimplePingEvent
+     * Curently all that has been defined is a SimplePingEvent
      */
     public void tick(){
         Event current = eventScheduler.next();
         if(current.type == EventType.SIMPLEPING){
+            System.out.println("GOT SIMPLEPING");
             SimplePingEvent x = (SimplePingEvent) current;
             getDeviceByID(x.id).handleSimplePing(x);
         }
