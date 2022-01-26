@@ -25,7 +25,7 @@ public class Simulation {
     private DeviceFactory deviceFactory;
     private ConnectionFactory connectionFactory;
 
-    public void Simulation(){
+    public Simulation(){
         eventScheduler = new EventScheduler();
         deviceFactory = new DeviceFactory();
         connectionFactory = new ConnectionFactory(eventScheduler);
@@ -132,7 +132,7 @@ public class Simulation {
      * @author Martin Janda
      */
     public void printTopology(){
-        for(var i =1; i<=deviceIDIncrement; i++)
+        for(var i =0; i<deviceIDIncrement; i++)
         {
             System.out.println("========================");
             System.out.println();

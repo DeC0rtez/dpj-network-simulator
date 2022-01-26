@@ -7,7 +7,7 @@ public abstract class Device implements EventHandler {
     public NetworkLayer layerStack;
     public DeviceType type;
     public IPAddress ipAddress;
-    public LinkedList<Connection> connections;
+    public LinkedList<Connection> connections = new LinkedList<Connection>();
 
     public Device(NetworkLayer _layer, DeviceType _type, int _deviceID, IPAddress _ip) {
         id = _deviceID;
