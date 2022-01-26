@@ -1,6 +1,11 @@
 package net.sim;
 
 
+/**
+ * Class used to represent an ethernet connection
+ *
+ * @author Vlad
+ */
 public class EthernetConnection extends Connection{
     public float failureRate;
     public int speed;

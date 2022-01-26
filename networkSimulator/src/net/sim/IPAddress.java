@@ -1,10 +1,20 @@
 package net.sim;
 
+/**
+ * Class for representing IP adresses
+ *
+ * @author Nikita Druzhkov
+ */
 public class IPAddress {
     public String ipStr = "";
     public IPAddress(String ip){
         ipStr = ip;
     }
+
+    /**
+     * Returns bytes of the ip address
+     * @return
+     */
     public byte[] GetBytes(){
         byte[] bytes = {0,0,0,0};
         if (ipStr.length() > 0){
