@@ -1,6 +1,10 @@
 package net.sim;
 
-
+/**
+ * Abstract representation of a connection
+ *
+ * @author Vlad & Nikita
+ */
 public abstract class Connection implements  EventHandler{
     //Vlad & Nikita
     public int id;
@@ -22,6 +26,11 @@ public abstract class Connection implements  EventHandler{
     public void handleEvent(Event e) {
         eventScheduler.schedule(e);
     }
+
+    /**
+     * Set the failure rate of a connection
+     * @param failureRate
+     */
     public void setFailureRate(float failureRate) {
         if(failureRate > 0 && failureRate < 1){
             this.failureRate = failureRate;
@@ -33,6 +42,7 @@ public abstract class Connection implements  EventHandler{
 
     /**
      * Connects  device1 to another device that is NOT device2
+     * DEPRECIATED, Factories are only to be used by Simulation (Martin Janda)
      * @param connectionNumber Id of connection
      * @param device device to which device1 will be connected
      * @author Nikita Druzhkov
