@@ -2,6 +2,10 @@ package net.sim;
 
 import java.util.LinkedList;
 
+/**
+ * This class is responsible for defining the behaviors of all devices
+ * @author Nikita Druzhkov
+ */
 public abstract class Device implements EventHandler {
     public int id = 0;
     public NetworkLayer layerStack;
@@ -9,6 +13,13 @@ public abstract class Device implements EventHandler {
     public IPAddress ipAddress;
     public LinkedList<Connection> connections = new LinkedList<Connection>();
 
+    /**
+     * Create a new device, should only be used by DeviceFactory
+     * @param _layer
+     * @param _type
+     * @param _deviceID
+     * @param _ip
+     */
     public Device(NetworkLayer _layer, DeviceType _type, int _deviceID, IPAddress _ip) {
         id = _deviceID;
         layerStack = _layer;
@@ -16,6 +27,10 @@ public abstract class Device implements EventHandler {
         ipAddress = _ip;
     }
 
+    /**
+     * Adds a connection to the devices list of connections, should only be used by Simulation
+     * @param connection
+     */
     public  void addConnection(Connection connection){
         connections.add(connection);
     }
@@ -23,6 +38,8 @@ public abstract class Device implements EventHandler {
     /**
      * Method for handling a PingEvent
      * @param event must be a PingEvent
+     *
+     * @autho Martin Janda
      */
     public void handleSimplePing(SimplePingEvent event){
         Device device1 = connections.getFirst().device1;
@@ -40,6 +57,8 @@ public abstract class Device implements EventHandler {
      * @param pingSourceIP
      * @param pingDestinationIP
      * @param pingMessage
+     *
+     * @author Martin Janda
      */
     private void acknowledgePing(String pingSourceIP, String pingDestinationIP, String pingMessage,Device device2) {
         System.out.print("Device: ");
